@@ -1,0 +1,97 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0a1226;font-family:"Segoe UI",Helvetica,Arial,sans-serif;color:#e2e8f0;width:1500px;padding:28px 32px 30px}
+  h1{font-size:26px;font-weight:800;color:#f8fafc}
+  .sub{font-size:13px;color:#8aa0c4;margin:4px 0 22px}
+  .grid{display:grid;grid-template-columns:170px 1fr 1fr;gap:16px 18px}
+  .colh{font-size:13px;font-weight:700;letter-spacing:1.2px;color:#7dd3fc;padding:0 4px 2px}
+  .rowh{display:flex;flex-direction:column;justify-content:center;border-left:4px solid #38bdf8;padding-left:12px}
+  .rowh b{font-size:17px;color:#f8fafc}
+  .rowh span{font-size:12px;color:#8aa0c4;margin-top:3px;line-height:1.35}
+  .stage{background:#000121;border:1px solid #243352;border-radius:12px;padding:24px 22px;display:flex;align-items:center;justify-content:center;min-height:236px}
+  .modal{width:460px;background:#262a3b;border-radius:3px;padding:20px 24px 22px;box-shadow:0 8px 30px rgba(0,0,0,.55)}
+  .mh{display:flex;align-items:center;gap:14px}
+  .warn{width:30px;height:27px;flex:none}
+  .mt{font-size:15px;font-weight:700;color:#fff;flex:1}
+  .x{font-size:22px;color:#cbd5e1;line-height:1}
+  .who{color:#ffd400;font-weight:700;font-size:14.5px;line-height:1.35;margin:15px 0 8px}
+  .body{font-size:14.5px;line-height:1.42;color:#f1f5f9}
+  .btns{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
+  .b{font-size:13.5px;font-weight:600;padding:7px 14px;border-radius:2px}
+  .sec{border:1px solid #00cccc;color:#00cccc;background:transparent}
+  .pri{background:#00d6d6;color:#00121a;border:1px solid #00d6d6}
+  .panel{width:460px;background:#05072a;border:1px solid #1b2347;padding:16px 16px 18px}
+  .ptop{font-size:12px;color:#8aa0c4;margin-bottom:10px}
+  .banner{border:2px solid #ffd400;border-radius:2px;padding:12px 14px;display:flex;gap:12px;background:#05072a}
+  .banner .warn{margin-top:2px}
+  .banner p{font-size:14px;line-height:1.42;color:#f1f5f9}
+  .banner p b{color:#fff}
+  .plist{margin-top:14px;font-size:12px;color:#8aa0c4}
+  .chip{background:#0d1b3e;border-radius:3px;padding:7px 10px;margin-top:6px;font-size:13px;color:#e2e8f0}
+  .legend{margin-top:18px;font-size:12px;color:#8aa0c4;line-height:1.6;border-top:1px solid #243352;padding-top:12px}
+  .legend b{color:#cbd5e1}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="w" viewBox="0 0 30 27"><path d="M15 1 29 26H1z" fill="#ffd400"/><rect x="14" y="9" width="2.4" height="9" fill="#262a3b"/><rect x="14" y="20" width="2.4" height="2.4" fill="#262a3b"/></symbol>
+<symbol id="wo" viewBox="0 0 30 27"><path d="M15 1 29 26H1z" fill="none" stroke="#ffd400" stroke-width="2.4"/><rect x="14" y="9" width="2.4" height="9" fill="#ffd400"/><rect x="14" y="20" width="2.4" height="2.4" fill="#ffd400"/></symbol>
+</defs></svg>
+
+<h1>Proposed text v3: deleted assignees on PM schedules</h1>
+<div class="sub">Examples shown: 1 of 3 assignees deleted, and all 3 deleted. System as the subject of every sentence; no "you". Text only; layout stays as designed.</div>
+
+<div class="grid">
+  <div></div><div class="colh">SOME ASSIGNEES DELETED</div><div class="colh">ALL ASSIGNEES DELETED</div>
+
+  <div class="rowh"><b>TRIN-5577</b><span>Create WO from an expired schedule. Modal opened from the list page.</span></div>
+  <div class="stage"><div class="modal">
+    <div class="mh"><svg class="warn"><use href="#w"/></svg><div class="mt">Deleted assignee won't be assigned</div><div class="x">×</div></div>
+    <div class="who">Marcus Lee (Deleted)</div>
+    <div class="body">The work order will be created and assigned to the other 2 assignees.</div>
+    <div class="btns"><span class="b sec">Cancel</span><span class="b pri">Create WO</span></div>
+  </div></div>
+  <div class="stage"><div class="modal">
+    <div class="mh"><svg class="warn"><use href="#w"/></svg><div class="mt">No assignee for this work order</div><div class="x">×</div></div>
+    <div class="who">All assignees on this schedule are deleted users.</div>
+    <div class="body">The work order will be created unassigned. Someone can be assigned after it's created.</div>
+    <div class="btns"><span class="b sec">Cancel</span><span class="b pri">Create unassigned WO</span></div>
+  </div></div>
+
+  <div class="rowh"><b>TRIN-5576</b><span>Duplicate a PM schedule. Modal opened from the list page.</span></div>
+  <div class="stage"><div class="modal">
+    <div class="mh"><svg class="warn"><use href="#w"/></svg><div class="mt">Deleted assignee won't be assigned</div><div class="x">×</div></div>
+    <div class="who">Marcus Lee (Deleted)</div>
+    <div class="body">The schedule will be duplicated. Its work orders will go to the other 2 assignees.</div>
+    <div class="btns"><span class="b sec">Cancel</span><span class="b pri">Duplicate</span></div>
+  </div></div>
+  <div class="stage"><div class="modal">
+    <div class="mh"><svg class="warn"><use href="#w"/></svg><div class="mt">No assignee for the duplicate</div><div class="x">×</div></div>
+    <div class="who">All assignees on this schedule are deleted users.</div>
+    <div class="body">The schedule will be duplicated. Its work orders will be created unassigned until someone is assigned.</div>
+    <div class="btns"><span class="b sec">Cancel</span><span class="b pri">Duplicate anyway</span></div>
+  </div></div>
+
+  <div class="rowh"><b>TRIN-5575</b><span>Extend End date of an expired schedule. Banner in the details panel.</span></div>
+  <div class="stage"><div class="panel">
+    <div class="ptop">SWO 0012 &nbsp;·&nbsp; Details</div>
+    <div class="banner"><svg class="warn"><use href="#wo"/></svg>
+      <p><b>1 of 3 assignees is a deleted user.</b> If the End date is extended, new work orders will go to the other 2 assignees.</p></div>
+    <div class="plist">Assigned To</div>
+    <div class="chip">Jason Trucks (Deleted)</div><div class="chip">Evan Rivers</div><div class="chip">Liam Carter</div>
+  </div></div>
+  <div class="stage"><div class="panel">
+    <div class="ptop">SWO 0012 &nbsp;·&nbsp; Details</div>
+    <div class="banner"><svg class="warn"><use href="#wo"/></svg>
+      <p><b>All 3 assignees are deleted users.</b> If the End date is extended, new work orders will be created unassigned.</p></div>
+    <div class="plist">Assigned To</div>
+    <div class="chip">Jason Trucks (Deleted)</div><div class="chip">Evan Rivers (Deleted)</div><div class="chip">Liam Carter (Deleted)</div>
+  </div></div>
+</div>
+
+<div class="legend">
+  <b>Names in the modals:</b> 1 name: "Marcus Lee (Deleted)" &nbsp;|&nbsp; 2 names: "Marcus Lee (Deleted), Casey Nguyen (Deleted)" &nbsp;|&nbsp; more than 2: first 2 and "and 3 more". Cap of 2 is adjustable. The all-deleted modals list no names.<br>
+  <b>Plural forms:</b> title "Deleted assignees won't be assigned" &nbsp;|&nbsp; "the other assignee" when 1 remains &nbsp;|&nbsp; banner "2 of 3 assignees are deleted users" &nbsp;|&nbsp; one-assignee schedule: "The only assignee is a deleted user"<br>
+  <b>To verify before use:</b> "Someone can be assigned after it's created" assumes an unassigned work order can be assigned later. I saw assign controls in the screens but did not test it. The End date form frame was not found, so the banner stays in the details panel.
+</div>
+</body></html>
